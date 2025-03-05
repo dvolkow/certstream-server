@@ -10,6 +10,20 @@ defmodule Certstream do
       # Web services
       Certstream.WebsocketServer,
 
+      # Clickhouse Queue:
+      {
+        Certstream.ChQueue,
+        database: Application.fetch_env!(:certstream, :database),
+        table: Application.fetch_env!(:certstream, :table),
+        port: Application.fetch_env!(:certstream, :ch_port),
+        host: Application.fetch_env!(:certstream, :ch_host),
+        user: Application.fetch_env!(:certstream, :ch_user),
+        password: Application.fetch_env!(:certstream, :ch_password),
+        pool_size: Application.fetch_env!(:certstream, :pool_size),
+        rate: Application.fetch_env!(:certstream, :rate),
+        batch_size: Application.fetch_env!(:certstream, :batch_size)
+      },
+
       # Agents
       Certstream.ClientManager,
       Certstream.CertifcateBuffer,

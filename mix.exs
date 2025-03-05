@@ -34,6 +34,8 @@ defmodule Certstream.Mixfile do
       {:instruments, "~> 1.1"},
       {:jason, "~> 1.4.4"},
       {:number, "~> 1.0"},
+      {:ch, "~> 0.3.0"},
+      {:dotenvy, "~> 1.0.1"},
       {:pobox, "~> 1.2"},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.13", only: :test}
