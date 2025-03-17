@@ -16,6 +16,7 @@ RUN mix do deps.get, deps.compile
 
 COPY frontend/dist/ /opt/app/frontend/dist/
 COPY config/ /opt/app/config/
+COPY envs/ /opt/app/envs/
 
 COPY lib /opt/app/lib/
 
