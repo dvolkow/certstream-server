@@ -1,4 +1,4 @@
-FROM elixir:1.8-alpine
+FROM elixir:1.18-otp-27
 
 WORKDIR /opt/app
 
@@ -6,8 +6,6 @@ ENV HOME /opt/app
 ENV MIX_HOME=/opt/mix
 ENV HEX_HOME=/opt/hex
 ENV MIX_ENV=prod
-
-RUN apk add git
 
 RUN mix local.hex --force && mix local.rebar --force
 
@@ -18,6 +16,7 @@ RUN mix do deps.get, deps.compile
 
 COPY frontend/dist/ /opt/app/frontend/dist/
 COPY config/ /opt/app/config/
+COPY envs/ /opt/app/envs/
 
 COPY lib /opt/app/lib/
 
